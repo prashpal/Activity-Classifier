@@ -51,7 +51,7 @@ target_map = {
 }
 
 # Use the same labels used in the experiment
-data = data.filter_by(target_map.keys(), 'activity_id')
+data = data.filter_by(list(target_map.keys()), 'activity_id')
 data['activity'] = data['activity_id'].apply(lambda x: target_map[x])
 data = data.remove_column('activity_id')
 
